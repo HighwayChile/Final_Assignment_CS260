@@ -66,7 +66,8 @@ void add_node()
 void add_edge()  
 bool is_path_extant()  
 void shortest_path()  
-void find_all_paths()  
+void find_all_paths() 
+void min_span_tree()   
 
 
 
@@ -78,11 +79,11 @@ Kruskal's Algorithm: finds minimum spanning tree
 --------------------  
 The algorithm performs the following steps:  
 
-    Create a forest (a set of trees) initially consisting of a separate single-vertex tree for each vertex in the input graph.  
-    Sort the graph edges by weight.  
-    Loop through the edges of the graph, in ascending sorted order by their weight. For each edge:  
-        Test whether adding the edge to the current forest would create a cycle.  
-        If not, add the edge to the forest, combining two trees into a single tree.  
+1. Create a forest (a set of trees) initially consisting of a separate single-vertex tree for each vertex in the input graph.  
+2. Sort the graph edges by weight.  
+3. Loop through the edges of the graph, in ascending sorted order by their weight. For each edge:  
+    - Test whether adding the edge to the current forest would create a cycle.  
+    - If not, add the edge to the forest, combining two trees into a single tree.  
 
 At the termination of the algorithm, the forest forms a minimum spanning forest of the graph. If the graph is connected, the forest has a single component and forms a minimum spanning tree.   
 
@@ -118,12 +119,23 @@ https://www.youtube.com/watch?v=Zqsj--c_RME
 
 # INSTRUCTIONS  
 
-Topics: More graph coding, making an add_node and add_edge function in our code, and discussion of graph algorithms  
+(20%) Create a design before you start coding that describes or shows how a graph structure could be used to store some kinds of data and attempt to solve some kind of problem (yes, this can be a game that needs a graph to represent a map!),  
 
-helping with final projects, review, and thinking ahead?  
+(20%) Create some tests (at least two for each piece of functionality) before you start coding...  
 
+(40%) Implement a graph class with at least (this category effectively combines implementation and specification, partly to emphasize getting the algorithms working!):
 
-Other graph properties: connectivity, graph cuts, isographs, others?  
+(5%) a function to add a new vertex to the graph (perhaps add_vertex(vertex_name)),
+
+(5%) a function to add a new edge between two vertices of the graph (perhaps add_edge(source, destination) or source.add_edge(destination)),
+
+(15%) a function for a shortest path algorithm (perhaps shortest_path(source, destination)),
+
+(15%) a function for a minimum spanning tree algorithm (example min_span_tree()).
+
+(10%) Analyze the complexity of all of your graph behaviors (effectively a part of our documentation for grading purposes),
+
+(10%) Once you have implemented and tested your code, add to the README file what line(s) of code or inputs and outputs show your work meeting each of the above requirements (or better, include a small screen snip of where it meets the requirement!).
 
 
 Let's go over some shortest-path algorithms, such as Dijkstra's algorthm: https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm  

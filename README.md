@@ -91,7 +91,8 @@ At the termination of the algorithm, the forest forms a minimum spanning forest 
 
 
 
-
+resource sites:  
+---------------  
 
 openGL - getting started https://www.khronos.org/opengl/wiki/Getting_Started#Downloading_OpenGL    
 
@@ -109,6 +110,7 @@ GLFW - https://www.glfw.org/download.html
 GLAD Multi-Language GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs. - https://glad.dav1d.de/    
 
 instructional videos:  
+---------------------  
 https://www.youtube.com/watch?v=Y4F0tI7WlDs  
 https://www.youtube.com/watch?v=Zqsj--c_RME   
 

@@ -6,10 +6,13 @@ Final for CS260, Spring 2024 - Make a Graph
 I want to make an interactive graph that has a visual interface, using openGL.  
 
 The reason I want a visual representation is because that is the easiest way for me to be 
-reasonably sure that my mathematics are correct. It also adds a flair and "production value"     
+reasonably sure that my mathematics are correct. It also adds a flair and "production value"    
+
+* NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
+I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.  
 
 Adding a node could cause a visual problem in openGL where it draws a node over a node. 
-NEED TO develop algorithm - One simple solution would be to have a 2D representation 
+need to develop algorithm - One simple solution would be to have a 2D representation 
 of the graph. Something like:  
 
 void draw_node(){  
@@ -31,43 +34,128 @@ as well as visual object for each node.
 
 This graph should allow user to:  
 --------------------------------  
+accept user input (string)  
 add a node  
 add an edge  
-determine if a path is possible from node 00 to node A5  
-highlight node - maybe   
-find shortest path(highlight)  
-traverse shortest path? - maybe, might be pointless, might be fun to watch.    
-find all paths(highlight)  
-
+determine if a path is possible from node A to node B   
+find a node   
+find shortest path(highlight)     
+find all paths(highlight) // not really needed, will just highlight all edges.  
+find the minimum spanning tree of the graph  
 
 
 Design constraints(features):  
 -----------------------------  
-User may not name the nodes. Might use two-hexadigit numbering system.  
-This would allow for 256 total nodes, as long as removing nodes is not an issue.  
-
+User may not name the nodes. Might use two-hexadigit numbering system. 
+CHANGE - maybe user names each room, and also the number of doors(edges)?   
+I like this, I think user names each room using string input.  
+Should I limit the number of edges per vertex? ex: max_weight = 4? - It's not unreasonable.  
+Must limit each edge to have a max of 2 vertices. ex: max_weight = 2 - I will refer to this as weight as well.   
 
 
 Objects needed:    
 ---------------  
 linked list of node structs  
-struct node(name, num_edges(weight), color, width, what_else_???)  
+call the node "vertex!"
+struct vertex(name, id number, num_edges(weight), color, width, what_else_???)  
  - can each node have a "sub-node" that is the collision node?  
  - color, width options could allow for a highlight.  
 struct edge(name, connections(0,1,2), color, width, what_else_???)  
-Should a path be an object?  
+Should a path be an object? I don't need it to be. idk...    
 
 
+Object Pseudo:  
+--------------  
+struct vertex {  
+    string name; 
+    int id; 
+    int num_edges;  
+    color(what data type?); //surely this is an openGL setting lol    
+    width;// this line is also something with openGL. Perhaps two structs, one collision.    
+    vertex *next; 
+};  
+
+class graph {  
+    vertex *head;  
+    -add function declarations-  
+};  
+
+class collision_graph {  
+    vertex *head;  
+} // this is not right, but I think I want two graphs, one for math, one for display   
 
 
 Functions needed:  
 -----------------  
+string user_input() //idk, could return string to use elsewhere.      
 void add_node()  
 void add_edge()  
+void find_node()  
+void find_edge()  
 bool is_path_extant()  
 void shortest_path()  
-void find_all_paths() 
-void min_span_tree()   
+void min_span_tree()  
+
+
+Functions Pseudo:  
+-----------------  
+ 
+string user_input(){   
+    string user_input;
+    if(cin >> "" ){  
+        cout << This is an empty input, try again;  
+    } else {  
+        return user_input;  
+    }  
+}  
+
+
+void graph::add_node(){  
+
+}  
+
+
+void graph::add_edge(){  
+
+}  
+
+
+bool graph::is_path_extant(){  
+    This will take two inputs from user_input  
+    string input_A;
+    string input_B;
+
+    if(the edges don't connect the vertices twixt A and B) {  
+        return false;  
+    } else {  
+        return true;
+    }
+
+}  
+
+
+void graph::shortest_path(){  
+    run is_path_extant() on two inputs, both string, both from user_in  
+
+    if (is_path_extant = true) {  
+        use algo to find shortest path  
+    } else {  
+        cout << "not gonna do it" << endl;  
+    }  
+}  
+
+
+void graph::min_span_tree(){  
+    use kruskal's. Remember: this finds a spanning tree!  
+}   
+
+
+
+
+Test functions needed:  
+----------------------  
+2 tests for each function.  
+
 
 
 

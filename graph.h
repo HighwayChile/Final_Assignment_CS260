@@ -1,4 +1,9 @@
+#pragma once
 
+#include <string>
+#include <vector>
+
+#include "vertex.h"
 
 class Graph {
     int num_vertex;  // size of vertices

@@ -6,9 +6,21 @@
 struct Vertex;
 
 struct Edge {
-    int weight;
-    int id;
-    // int num_vertex;
-    Vertex *origin;
-    Vertex *destination;
+    private:
+        int weight;
+        Vertex *origin;
+        Vertex *destination;
+
+    public:
+        Edge(int new_weight, Vertex *new_origin, Vertex *new_destination);
+        // DON'T FORGET DECONSTRUCTORS!
+        int get_weight();
+        Vertex *get_origin();
+        Vertex *get_destination();
+
+        // likewise copy/pasta'd
+        // std::string to_string();
+
 };
+
+

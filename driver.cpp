@@ -84,7 +84,7 @@ int main() {
     Vertex vertex2("vertex2");
     Vertex vertex3("vertex3");
 
-    vertex1.add_neighbor();
+    // vertex1.add_neighbor(3, edge1);
     // test line
     // cout << "A.name: " << A.name << endl;
     // cout << "A.id: " << A.id << endl;
@@ -93,6 +93,9 @@ int main() {
     Edge edge1(1, &vertex1, &vertex2);
     Edge edge2(4, &vertex2, &vertex3);
     Edge edge3(5, &vertex3, &vertex1);
+
+    vertex1.add_neighbor(3, &vertex2);
+    vertex1.add_neighbor(3, &vertex3);
 
     cout << "edge1.get_origin(): " << edge1.get_origin() << endl;
     cout << "edge1.get_destination(): " << edge1.get_destination() << endl;

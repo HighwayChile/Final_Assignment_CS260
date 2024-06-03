@@ -11,6 +11,8 @@ reasonably sure that my mathematics are correct. It also adds a flair and "produ
 * NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
 I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.  
 
+Pathfinding algorithm? - it's an idea!  
+
 Adding a node could cause a visual problem in openGL where it draws a node over a node. 
 need to develop algorithm - One simple solution would be to have a 2D representation 
 of the graph. Something like:  
@@ -30,6 +32,15 @@ void draw_node(){
 // Does openGl have typical sort of collision detection? if so, could make a collision object, 
 as well as visual object for each node.    
 // Research openGL collision, and if it is easy, make a 3D graph.  
+
+
+I originally had wanted to include the dangling edges.   
+
+I am not sure if I want to have a remove function, but it would be a good way to prove it's pathfinding.  
+
+OUTLINE - User begins in room Zep Tepi. There are three paths; A, B and C. User will be asked which path to take, 
+then the user will be asked what room they have entered (name new vertex, room). User will be asked how many paths they 
+see(min 1, max 10, new edges.)
 
 
 This graph should allow user to:  
@@ -74,6 +85,10 @@ struct vertex {
     width;// this line is also something with openGL. Perhaps two structs, one collision.    
     vertex *next; 
 };  
+
+struct edge {
+
+}
 
 class graph {  
     vertex *head;  
@@ -142,7 +157,7 @@ void graph::shortest_path(){
     } else {  
         cout << "not gonna do it" << endl;  
     }  
-}  
+}  // Dijkstra's Algo is roughly Big O(n^2)
 
 
 void graph::min_span_tree(){  

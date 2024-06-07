@@ -13,21 +13,18 @@ struct Edge;
 
 struct Vertex { 
     string name; 
-    // char name; 
-    // int id; 
-    // int num_edges;  
-    // color; //surely this is an openGL setting lol    
-    // width;// this line is also something with openGL. Perhaps two structs, one collision.
+    // I have never used "vector" and I am still not 100% sure what it is doing. I understand vector mathematics.
+    vector<Edge *> *neighbors;
 
-    std::vector<Edge *> *neighbors; 
+
     // DON'T FORGET DECONSTRUCTORS!
-    Vertex(string new_name); // constructor (forgot this at fiorst lol. But I realized without any outside help apart from the compiler!)
+    Vertex(string new_name); // constructor (forgot this at first lol. But I realized without any outside help apart from the compiler!)
+    ~Vertex();
     string get_name();
     vector<Edge *> *get_neighbors();
     int num_edges_attached();
     void add_neighbor(int weight, Vertex *new_vertex);
+    void print_neighbors_to_screen();
 
-    // string Vertex::get_name();
-    // std::vector<Edge *> *get_neighbors();
     
 };  

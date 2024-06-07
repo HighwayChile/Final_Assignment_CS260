@@ -1,17 +1,33 @@
-# Final_Assignment_CS260  
+# Final_Assignment_CS260   
 Final for CS260, Spring 2024 - Make a Graph  
 
 
-# Design  
-I want to make an interactive graph that has a visual interface, using openGL.  
+# Program Flow
+intro   
+menu  
+start  
+request edge  
+user input choose edge  
+request name  
+user input name vertex  
+request num_edges  
+user input choose num_edges  
 
-The reason I want a visual representation is because that is the easiest way for me to be 
-reasonably sure that my mathematics are correct. It also adds a flair and "production value"    
+request edge  
+user input edge  
+
+
+
+
+# Design  
+
 
 * NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
 I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.  
 
 Pathfinding algorithm? - it's an idea!  
+
+* This was from when I was thinking I might use openGL (never have used it before, and changed my mind about it)
 
 Adding a node could cause a visual problem in openGL where it draws a node over a node. 
 need to develop algorithm - One simple solution would be to have a 2D representation 
@@ -38,7 +54,7 @@ I originally had wanted to include the dangling edges.
 
 I am not sure if I want to have a remove function, but it would be a good way to prove it's pathfinding.  
 
-OUTLINE - User begins in room Zep Tepi. There are three paths; A, B and C. User will be asked which path to take, 
+OUTLINE - User begins in room Alpha. There are three paths; A, B and C. User will be asked which path to take, 
 then the user will be asked what room they have entered (name new vertex, room). User will be asked how many paths they 
 see(min 1, max 10, new edges.)
 
@@ -223,6 +239,9 @@ https://www.youtube.com/watch?v=Zqsj--c_RME
 
 
 # INSTRUCTIONS  
+
+DUE TUESDAY, JUNE 11, 10:59 PM  
+------------------------------  
 
 1. (20%) Create a design before you start coding that describes or shows how a graph structure could be used to store some kinds of data and attempt to solve some kind of problem (yes, this can be a game that needs a graph to represent a map!),  
 

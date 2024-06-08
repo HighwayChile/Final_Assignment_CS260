@@ -4,48 +4,48 @@ Final for CS260, Spring 2024 - Make a Graph
 
 # Program Flow
 intro   
-menu  
-start  
+menu    
+start   
 request edge  
 user input choose edge  
 request name  
-user input name vertex  
-request num_edges  
-user input choose num_edges  
+user input name vertex   
+request num_edges    
+user input choose num_edges    
 
-request edge  
-user input edge  
-
-
+request edge    
+user input edge    
 
 
-# Design  
+
+
+# Design    
 
 
 * NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
-I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.  
+I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.   
 
-Pathfinding algorithm? - it's an idea!  
+Pathfinding algorithm? - it's an idea!    
 
-* This was from when I was thinking I might use openGL (never have used it before, and changed my mind about it)
+* This was from when I was thinking I might use openGL (never have used it before, and changed my mind about it)  
 
 Adding a node could cause a visual problem in openGL where it draws a node over a node. 
 need to develop algorithm - One simple solution would be to have a 2D representation 
-of the graph. Something like:  
+of the graph. Something like:    
 
-void draw_node(){  
-    while(new node is created){  
-        if(no node exists in display){  
-            draw node to openGL;  
-        }  
-        else{  
-            move over 10 pixels;  
-            move up 10 pixels; 
-            draw_node(); 
-        }  
-    }  
-}  
-// Does openGl have typical sort of collision detection? if so, could make a collision object, 
+void draw_node(){    
+    while(new node is created){    
+        if(no node exists in display){    
+            draw node to openGL;    
+        }    
+        else{    
+            move over 10 pixels;   
+            move up 10 pixels;   
+            draw_node();   
+        }    
+    }    
+}    
+// Does openGl have typical sort of collision detection? if so, could make a collision object,   
 as well as visual object for each node.    
 // Research openGL collision, and if it is easy, make a 3D graph.  
 
@@ -56,7 +56,9 @@ I am not sure if I want to have a remove function, but it would be a good way to
 
 OUTLINE - User begins in room Alpha. There are three paths; A, B and C. User will be asked which path to take, 
 then the user will be asked what room they have entered (name new vertex, room). User will be asked how many paths they 
-see(min 1, max 10, new edges.)
+see(min 1, max 10, new edges.)  
+
+
 
 
 This graph should allow user to:  
@@ -73,7 +75,7 @@ find the minimum spanning tree of the graph
 
 Design constraints(features):  
 -----------------------------  
-User may not name the nodes. Might use two-hexadigit numbering system. 
+User may not name the nodes. Might use two-hexadigit numbering system.  
 CHANGE - maybe user names each room, and also the number of doors(edges)?   
 I like this, I think user names each room using string input.  
 Should I limit the number of edges per vertex? ex: max_weight = 4? - It's not unreasonable.  
@@ -82,9 +84,9 @@ Must limit each edge to have a max of 2 vertices. ex: max_weight = 2 - I will re
 
 Objects needed:    
 ---------------  
-linked list of node structs  
-call the node "vertex!"
-struct vertex(name, id number, num_edges(weight), color, width, what_else_???)  
+linked list of node structs   
+call the node "vertex!"  
+struct vertex(name, id number, num_edges(weight), color, width, what_else_???)   
  - can each node have a "sub-node" that is the collision node?  
  - color, width options could allow for a highlight.  
 struct edge(name, connections(0,1,2), color, width, what_else_???)  
@@ -99,19 +101,19 @@ struct vertex {
     int num_edges;  
     color(what data type?); //surely this is an openGL setting lol    
     width;// this line is also something with openGL. Perhaps two structs, one collision.    
-    vertex *next; 
+    vertex *next;  
 };  
 
-struct edge {
+struct edge {  
 
-}
+}  
 
-class graph {  
-    vertex *head;  
-    -add function declarations-  
-};  
+class graph {   
+    vertex *head;   
+    -add function declarations-   
+};   
 
-class collision_graph {  
+class collision_graph {   
     vertex *head;  
 } // this is not right, but I think I want two graphs, one for math, one for display   
 
@@ -119,47 +121,47 @@ class collision_graph {
 Functions needed:  
 -----------------  
 string user_input() //idk, could return string to use elsewhere.      
-void add_node()  
-void add_edge()  
-void find_node()  
-void find_edge()  
-bool is_path_extant()  
-void shortest_path()  
-void min_span_tree()  
+void add_node()   
+void add_edge()   
+void find_node()   
+void find_edge()   
+bool is_path_extant()   
+void shortest_path()   
+void min_span_tree()   
 
 
-Functions Pseudo:  
------------------  
+Functions Pseudo:   
+-----------------   
  
-string user_input(){   
-    string user_input;
+string user_input(){    
+    string user_input;  
     if(cin >> "" ){  
         cout << This is an empty input, try again;  
-    } else {  
-        return user_input;  
-    }  
-}  
+    } else {    
+        return user_input;   
+    }    
+}    
 
 
-void graph::add_node(){  
+void graph::add_node(){    
 
-}  
-
-
-void graph::add_edge(){  
-
-}  
+}    
 
 
-bool graph::is_path_extant(){  
-    This will take two inputs from user_input  
-    string input_A;
-    string input_B;
+void graph::add_edge(){   
+
+}   
+
+
+bool graph::is_path_extant(){   
+    This will take two inputs from user_input   
+    string input_A;  
+    string input_B;  
 
     if(the edges don't connect the vertices twixt A and B) {  
         return false;  
     } else {  
-        return true;
+        return true;  
     }
 
 }  
@@ -173,7 +175,7 @@ void graph::shortest_path(){
     } else {  
         cout << "not gonna do it" << endl;  
     }  
-}  // Dijkstra's Algo is roughly Big O(n^2)
+}  // Dijkstra's Algo is roughly Big O(n^2)  
 
 
 void graph::min_span_tree(){  
@@ -183,9 +185,9 @@ void graph::min_span_tree(){
 
 
 
-Test functions needed:  
-----------------------  
-2 tests for each function.  
+Test functions needed:   
+----------------------   
+2 tests for each function.   
 
 
 
@@ -194,12 +196,12 @@ Test functions needed:
 
 # REFERENCES & RESOURCES   
 
-Kruskal's Algorithm: finds minimum spanning tree  
+Kruskal's Algorithm: finds minimum spanning tree   
 --------------------  
 The algorithm performs the following steps:  
 
-1. Create a forest (a set of trees) initially consisting of a separate single-vertex tree for each vertex in the input graph.  
-2. Sort the graph edges by weight.  
+1. Create a forest (a set of trees) initially consisting of a separate single-vertex tree for each vertex in the input graph.   
+2. Sort the graph edges by weight.   
 3. Loop through the edges of the graph, in ascending sorted order by their weight. For each edge:  
     - Test whether adding the edge to the current forest would create a cycle.  
     - If not, add the edge to the forest, combining two trees into a single tree.  

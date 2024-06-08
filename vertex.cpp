@@ -39,11 +39,10 @@ void Vertex::add_neighbor(int weight, Vertex *new_vertex){
     neighbors->push_back(new_edge);
 }
 
-void Vertex::print_neighbors_to_screen() {
+void Vertex::print_neighbors() {
     for(Edge *edge : *neighbors) {
-        cout << "Name: " << edge->get_destination()->get_name() << ", weight: " << edge->get_weight() << endl;
+        cout << " - " << "Name: " << edge->get_destination()->get_name() << ", weight: " << edge->get_weight() << " - ";
     }
-    cout << endl;
 }
 
 

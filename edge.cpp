@@ -10,9 +10,9 @@ Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
 }
 
 Edge::~Edge(){
-    delete[] destination;
-    delete[] origin;
-    // delete[] weight;
+    delete destination;
+    delete origin;
+    delete &weight;
 }
 
 int Edge::get_weight(){

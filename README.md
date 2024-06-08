@@ -3,6 +3,9 @@ Final for CS260, Spring 2024 - Make a Graph
 
 
 # Program Flow
+
+
+* NOTE - I still like some of this functionality, but it doesn't quite make sense.  
 intro   
 menu    
 start   
@@ -187,11 +190,45 @@ void graph::min_span_tree(){
 
 Test functions needed:   
 ----------------------   
-2 tests for each function.   
+2 tests for each function.  
+
+For testing, I have been testing each functionality as the code comes together enough to test.  
+I have run the first tests, and they are outputting the desired feedback.  
+My first tests involved manually creating nodes and edges, connecting them, and printing the 
+results to the screen.  
+My second tests will be designed.  
 
 
 
+Test Design:  
+----------------------   
 
+For this test I will create a graph class, populate a graph , then test each connection.
+
+My first test graph will be a 3 node graph with three edges.  
+nodes are: A, B, and C  
+edges are: A/B, B/C, and C/A  
+C/A and A/C are equivalent (C/A or A/C)   
+
+My second test graph will be a binary tree  
+nodes are: D, E, F, G, H, I, J, K, L  
+terminal nodes are: G, H, I, K, L  
+edges are: D/E, D/F, E/G, E/H, F/I, F/J, J/K  
+so it looks like this:  
+
+            D   
+          /   \   
+         E     F   
+        / \   / \   
+       G   H I   J  
+                / \   
+               K   L  
+
+
+My third test graph will be a more complicated example, 
+which will be good for testing my algorithms.  
+nodes are: M, N, O, P, Q, R, S  
+edges are: ???  
 
 
 # REFERENCES & RESOURCES   

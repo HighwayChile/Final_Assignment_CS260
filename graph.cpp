@@ -12,11 +12,11 @@
     // Pseudo
     /*
     
-    for every new vertex
-        Vertex::Vertex(name)
+    new vertex
+        Vertex::Vertex(name) - incorrect, should be: Vertex *new_vertex = new Vertex
         num_vertex++
 
-    for every new edge
+    new edge
         Edge::edge(weight, origin, destination)
         num_edge++
 
@@ -45,12 +45,47 @@ Graph::~Graph() {
 }
 
 
-void add_vertex(string name);
-void add_edge(int weight, Vertex *origin, Vertex *destination);
-Vertex find_vertex(string name);
+// void add_vertex(string name);
+void Graph::add_vertex(string name) {
+    // code goes here - so type it!
+    Vertex *new_vertex = new Vertex(name);
+    num_vertex++;
+}
+
+
+// void add_edge(int weight, Vertex *origin, Vertex *destination);
+void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
+    // code goes here
+    Edge *new_edge = new Edge(weight, origin, destination);
+    num_edge++;
+}
+
+
+// Vertex find_vertex(string name);
+Vertex Graph::find_vertex(string name) {
+    // code goes here
+}
+
+
 // Edge find_edge(name) // idk how to search for an edge without a name. 
 // edges could inherit name from origin and destination names.
 // i.e. - Alpha/Bravo could be one edge that goes between nodes 1 and 2.
-bool is_path_extant();
-void shortest_path();     // void shortest_path(Djikstra's Algo)  
-void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
+Edge Graph::find_edge() {
+
+}
+
+
+// bool is_path_extant();
+
+
+// void shortest_path();     // void shortest_path(Djikstra's Algo) 
+void Graph::shortest_path() {
+    // soon...
+
+}
+
+
+// void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
+void Graph::min_span_tree() {
+    // soon...
+}

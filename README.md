@@ -5,7 +5,7 @@ Final for CS260, Spring 2024 - Make a Graph
 # Program Flow
 
 
-* NOTE - I still like some of this functionality, but it doesn't quite make sense.  
+* NOTE - I still like some of this functionality, but it doesn't quite make sense. change  
 intro   
 menu    
 start   

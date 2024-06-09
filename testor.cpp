@@ -4,8 +4,10 @@
 
 #include "vertex.cpp"
 #include "edge.cpp"
+#include "graph.cpp"
 #include "vertex.h"
 #include "edge.h"
+#include "graph.h"
 
 
 using namespace std;
@@ -63,7 +65,29 @@ int main() {
     // hook up the edges to the nodes
 
 
-    
+    cout << "\n" << endl;
+    cout << "MAKING GRAPH - 3 VERTICES" << endl;
+
+
+    Graph graph;
+
+    graph.add_vertex("A");
+    graph.add_vertex("B");
+    graph.add_vertex("C");
+
+    Vertex* vertexA = graph.find_vertex("A");
+    Vertex* vertexB = graph.find_vertex("B");
+    Vertex* vertexC = graph.find_vertex("C");
+
+    if (vertexA && vertexB && vertexC) {
+        graph.add_edge(10, vertexA, vertexB);
+        graph.add_edge(20, vertexB, vertexC);
+        graph.add_edge(30, vertexC, vertexA);
+    }
+
+    std::cout << "Number of vertices: " << graph.get_num_vertex() << std::endl;
+    std::cout << "Number of edges: " << graph.get_num_edge() << std::endl;
+
 
 
     cout << endl;

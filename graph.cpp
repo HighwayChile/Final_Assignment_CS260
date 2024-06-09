@@ -49,6 +49,8 @@ Graph::~Graph() {
 void Graph::add_vertex(string name) {
     // code goes here - so type it!
     Vertex *new_vertex = new Vertex(name);
+    // I was missing the push_back function to push new vector
+    vertices.push_back(new_vertex);
     num_vertex++;
 }
 
@@ -57,21 +59,33 @@ void Graph::add_vertex(string name) {
 void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
     // code goes here
     Edge *new_edge = new Edge(weight, origin, destination);
+    // missed this line here, too. Was reminded by ChatGPT, but remember Joseph Jess' comments.
+    edges.push_back(new_edge);
     num_edge++;
 }
 
-
 // Vertex find_vertex(string name);
-Vertex Graph::find_vertex(string name) {
+Vertex *Graph::find_vertex(string name) {
     // code goes here
+    for(Vertex *vertex : vertices) {
+        if(vertex->get_name() == name) {
+            return vertex;
+        }
+    }
+    return nullptr;
 }
 
 
 // Edge find_edge(name) // idk how to search for an edge without a name. 
 // edges could inherit name from origin and destination names.
 // i.e. - Alpha/Bravo could be one edge that goes between nodes 1 and 2.
-Edge Graph::find_edge() {
-
+Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
+    for(Edge *edge : edges) {
+        if(edge->get_origin() == origin || edge->get_destination() == destination) {
+            return edge;
+        }
+    }
+    return nullptr;
 }
 
 
@@ -88,4 +102,14 @@ void Graph::shortest_path() {
 // void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
 void Graph::min_span_tree() {
     // soon...
+}
+
+
+int Graph::get_num_edge() {
+    return num_edge;
+}
+
+
+int Graph::get_num_vertex() {
+    return num_vertex;
 }

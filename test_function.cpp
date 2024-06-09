@@ -46,11 +46,14 @@ void test_function() {
     vertex1.add_neighbor(3, &vertex2);
     vertex1.add_neighbor(3, &vertex3);
 
+    cout << "NEW edge1.create_name: " << edge1.create_name(&vertex1, &vertex2) << endl;;
+
     cout << "edge1 get_origin:  ----- " << edge1.get_origin()->name << endl;
     cout << "edge1 get_destination: - " << edge1.get_destination()->name << endl;
     cout << "edge1 get_weight: ------ " << edge1.get_weight() << endl;
     cout << endl;
 
+    cout << "NEW edge2.create_name: " << edge2.create_name(&vertex2, &vertex3) << endl;;
     cout << "edge2 get_origin: ------ " << edge2.get_origin()->name << endl;
     cout << "edge2 get_destination: - " << edge2.get_destination()->name << endl;
     cout << "edge2 get_weight: ------ " << edge2.get_weight() << endl;
@@ -110,9 +113,9 @@ void test_function() {
     Vertex *vertexC = graph.find_vertex("C");
 
     if (vertexA && vertexB && vertexC) {
-        graph.add_edge(10, vertexA, vertexB);
-        graph.add_edge(20, vertexB, vertexC);
-        graph.add_edge(30, vertexC, vertexA);
+        graph.add_edge("A/B", 10, vertexA, vertexB);
+        graph.add_edge("B/C", 20, vertexB, vertexC);
+        graph.add_edge("C/A" , 30, vertexC, vertexA);
     }
 
     cout << "Number of vertices: " << graph.get_num_vertex() << endl;
@@ -124,6 +127,8 @@ void test_function() {
     cout << "print vertexA->name: " << vertexA->name << endl;
     cout << "edge_name: -blank-" << endl;
     // graph.print_neighbors(vertexA);
+    cout << "vertexA print_neighbors" ; 
+    vertexA->print_neighbors();
 
 
 

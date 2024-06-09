@@ -56,7 +56,7 @@ void Graph::add_vertex(string name) {
 }
 
 
-void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
+void Graph::add_edge(string edge_name, int weight, Vertex *origin, Vertex *destination) {
     Edge *new_edge = new Edge(weight, origin, destination);
     // missed this line here, too. Was reminded by ChatGPT, but remember Joseph Jess' comments.
     edges.push_back(new_edge);

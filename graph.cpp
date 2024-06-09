@@ -60,13 +60,20 @@ void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
     Edge *new_edge = new Edge(weight, origin, destination);
     // missed this line here, too. Was reminded by ChatGPT, but remember Joseph Jess' comments.
     edges.push_back(new_edge);
+    // WHEN YOU ADD AN EDGE, YOU SHOULD NAME THAT EDGE!
     num_edge++;
+
+    // string edge_name = origin->name + "/" + destination->name;
+    // // return edge_name;
+    // cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
+    // return edge_name;
 }
 
 
 Vertex *Graph::find_vertex(string name) {
     for(Vertex *vertex : vertices) {
         if(vertex->get_name() == name) {
+            cout << "find_vertex(): " << vertex->name << endl;
             return vertex;
         }
     }
@@ -89,6 +96,17 @@ Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
 
 
 
+// string Edge::create_name(Vertex *origin, Vertex *destination) {
+
+//     string edge_name = origin->name + "/" + destination->name;
+//     // return edge_name;
+//     cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
+//     return edge_name;
+// }
+
+
+
+
 
 
 
@@ -103,17 +121,24 @@ void Graph::shortest_path() {
 }
 
 
-// void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
+// void min_span_tree();     // void min_span_tree(Kruskal's Algo)
+// from geeksforgeeks
+// https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/ 
 void Graph::min_span_tree() {
     // soon...
+    /* 
+    1. Sort all EDGES in non-decreasing order of their weight... (increasing, then?)
+    2. Pick the smallest edge. check if it forms a cycle with the spanning tree so far. if cycle, discard edge, if none, include 
+    3. repeat step 2 until there are (num_vertex-1) edges in the spanning tree.
+
+    */
+
+//    for(Edge *edge : edges) {
+
+//    }
+
 
 }
-
-
-
-
-
-
 
 
 

@@ -1,17 +1,31 @@
+// #include <iostream>
+
+
+// #include "graph.h"
+// #include "vertex.h"
+// #include "edge.h"
+
+// using namespace std;
+
+
 #include <iostream>
+#include <vector>
+#include <limits>
 
-
-#include "graph.h"
+// #include "testor.cpp"
+// #include "test_function.cpp"
+#include "vertex.cpp"
+#include "edge.cpp"
+#include "graph.cpp"
 #include "vertex.h"
 #include "edge.h"
+#include "graph.h"
 
 using namespace std;
 
-
-
 void test_function() {
     // create nodes
-
+    // Totally random graph
     Vertex vertex1("vertex1");
     Vertex vertex2("vertex2");
     Vertex vertex3("vertex3");
@@ -32,19 +46,21 @@ void test_function() {
     vertex1.add_neighbor(3, &vertex2);
     vertex1.add_neighbor(3, &vertex3);
 
-    cout << "edge1.get_origin():  ----- " << edge1.get_origin()->name << endl;
-    cout << "edge1.get_destination(): - " << edge1.get_destination()->name << endl;
-    cout << "edge1.get_weight(): ------ " << edge1.get_weight() << endl;
+    cout << "edge1 get_origin:  ----- " << edge1.get_origin()->name << endl;
+    cout << "edge1 get_destination: - " << edge1.get_destination()->name << endl;
+    cout << "edge1 get_weight: ------ " << edge1.get_weight() << endl;
     cout << endl;
 
-    cout << "edge2.get_origin(): ------ " << edge2.get_origin()->name << endl;
-    cout << "edge2.get_destination(): - " << edge2.get_destination()->name << endl;
-    cout << "edge2.get_weight(): ------ " << edge2.get_weight() << endl;
+    cout << "edge2 get_origin: ------ " << edge2.get_origin()->name << endl;
+    cout << "edge2 get_destination: - " << edge2.get_destination()->name << endl;
+    cout << "edge2 get_weight: ------ " << edge2.get_weight() << endl;
     cout << endl;
 
     cout << "vertex1.get_name(): ----------- " << vertex1.get_name() << endl;
     cout << "vertex1.get_neighbors(): ------ " << vertex1.get_neighbors() << endl;
-    cout << "vertex1.num_edges_attached(): - " << vertex1.num_edges_attached() << endl;
+    cout << "vertex1 print_neighbors: ------ ";
+    vertex1.print_neighbors();
+    cout << "\nvertex1.num_edges_attached(): - " << vertex1.num_edges_attached() << endl;
     cout << endl;
 
     cout << "vertex2.num_edges_attached(): - " << vertex2.num_edges_attached() << endl;
@@ -63,8 +79,20 @@ void test_function() {
     cout << "vertex2.print_neighbors(): ------ ";
     vertex2.print_neighbors();
     cout << endl;
-    // cout << "vertex2.print_neighbors()" << vertex2.print_neighbors() << endl;
-    // hook up the edges to the nodes
+    
+    // vertex1.~Vertex();
+    // vertex2.~Vertex();
+    // vertex3.~Vertex();
+    // vertex4.~Vertex();
+    // vertex5.~Vertex();
+    // vertex6.~Vertex();
+    // vertex7.~Vertex();
+    // vertex8.~Vertex();
+
+    // edge1.~Edge();
+    // edge2.~Edge();
+    // edge3.~Edge();
+    // edge4.~Edge();
 
 
     cout << "\n" << endl;
@@ -92,12 +120,21 @@ void test_function() {
     // cout << "A's neighbors: " << vertexA.get_neighbors()->name << endl;
     cout << "A's neighbors: ";
     cout << "Name edge twixt A and B (expect A/B): " << endl;
-    cout << "print neighbors(A): " << vertexA->name << endl;
-    vertexA->print_neighbors();
+    // print neighbors working
+    cout << "print vertexA->name: " << vertexA->name << endl;
+    cout << "edge_name: -blank-" << endl;
+    // graph.print_neighbors(vertexA);
 
 
 
     cout << endl;
     cout << "Quitting Program..." << endl;
     system("pause");
+}
+
+
+int main() {
+    test_function();
+
+    return 0;
 }

@@ -31,7 +31,7 @@ Vertex *Edge::get_destination(){
 }
 
 
-string create_name(Vertex *origin, Vertex *destination) {
+string Edge::create_name(Vertex *origin, Vertex *destination) {
 
     string edge_name = origin->name + "/" + destination->name;
     // return edge_name;

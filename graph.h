@@ -33,4 +33,6 @@ class Graph {
         int get_num_vertex();
         void shortest_path();     // void shortest_path(Djikstra's Algo)  
         void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
+
+        int test_function();
 };

@@ -1,5 +1,6 @@
 #include "edge.h"
 #include "vertex.h"
+#include <string>
 
 using namespace std;
 
@@ -26,6 +27,14 @@ Vertex *Edge::get_origin(){
 
 
 Vertex *Edge::get_destination(){
-    // cout << "*Edge::get_destination(): " << destination << endl;
     return destination;
+}
+
+
+string create_name(Vertex *origin, Vertex *destination) {
+
+    string edge_name = origin->name + "/" + destination->name;
+    // return edge_name;
+    cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
+    return edge_name;
 }

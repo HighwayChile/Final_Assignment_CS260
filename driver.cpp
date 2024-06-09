@@ -2,18 +2,22 @@
 #include <vector>
 #include <limits>
 
+// #include "testor.cpp"
+#include "test_function.cpp"
 #include "vertex.cpp"
 #include "edge.cpp"
+#include "graph.cpp"
 #include "vertex.h"
 #include "edge.h"
+#include "graph.h"
 
 
 using namespace std;
 
 
 void show_menu() {
-    cout << "Welcome to the menu\n" 
-    "1. Choice 1\n"
+    cout << "GRAPH MENU\n" 
+    "1. RUN TESTS\n"
     "2. Choice 2\n"
     "3. Choice 3\n"
     "4. Choice 4\n"
@@ -25,19 +29,20 @@ void show_menu() {
 
 int main() {
 
-    // What do I want to do for the main???
-    // break time.
     show_menu();
     while(1) {
 
         int menu_choice;
+        int menu_max = 6;
 
-        if(cin >> menu_choice) {
-            cin.ignore();
+        if(cin >> menu_choice && menu_choice <= menu_max && menu_choice >= 1) {
+            // cin.ignore();
 
             switch (menu_choice) {
             case 1:
-                cout << "case 1 chosen" << endl;
+
+                cout << "RUN TESTS" << endl;
+                test_function();
                 break;
             case 2:
                 cout << "case 2 chosen" << endl;
@@ -63,6 +68,11 @@ int main() {
                 break;
             }
 
+        } else {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please choose a number between 1 - " << menu_max << endl;
+            cout << endl;
         }
     }
     return 0;

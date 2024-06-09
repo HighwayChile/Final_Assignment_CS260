@@ -2,7 +2,7 @@
 #include "edge.h"
 #include "vertex.h"
 
-
+using namespace std;
 
 Vertex::Vertex(string new_name) {
     name = new_name;
@@ -32,7 +32,7 @@ int Vertex::num_edges_attached(){
 
 
 
-// I am going to change how to add neighbors. I think. I don't understand this yet.
+// I am going to change how to add neighbors.
 void Vertex::add_neighbor(int weight, Vertex *new_vertex){
     Edge *new_edge = new Edge(weight, this, new_vertex);
 

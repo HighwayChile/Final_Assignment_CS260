@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 
 #include "graph.h"
@@ -6,9 +7,14 @@
 #include "edge.h"
 
 
+#include <unordered_map> // for unordered_map
+#include <queue> // for priority_queue
+#include <functional> // for greater
+#include <limits> // for INT_MAX
+
+using namespace std;
 
 
-    
     // Pseudo
     /*
     
@@ -23,8 +29,6 @@
     */
 
 
-
-// Graph(); //constructor
 // consider using list initializer: "Graph::Graph() : num_vertex(0), num_edge(0) {}"
 // argued with chatGPT about it, that is apparently a more efficient way of initialization.
 Graph::Graph(){
@@ -33,8 +37,7 @@ Graph::Graph(){
 }
 
 
-
-// ~Graph(); // deconstructor must iterate through array
+// deconstructor must iterate through array
 Graph::~Graph() {
     for(Vertex *vertex : vertices) {
         delete vertex;
@@ -45,9 +48,7 @@ Graph::~Graph() {
 }
 
 
-// void add_vertex(string name);
 void Graph::add_vertex(string name) {
-    // code goes here - so type it!
     Vertex *new_vertex = new Vertex(name);
     // I was missing the push_back function to push new vector
     vertices.push_back(new_vertex);
@@ -55,18 +56,15 @@ void Graph::add_vertex(string name) {
 }
 
 
-// void add_edge(int weight, Vertex *origin, Vertex *destination);
 void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
-    // code goes here
     Edge *new_edge = new Edge(weight, origin, destination);
     // missed this line here, too. Was reminded by ChatGPT, but remember Joseph Jess' comments.
     edges.push_back(new_edge);
     num_edge++;
 }
 
-// Vertex find_vertex(string name);
+
 Vertex *Graph::find_vertex(string name) {
-    // code goes here
     for(Vertex *vertex : vertices) {
         if(vertex->get_name() == name) {
             return vertex;
@@ -89,12 +87,18 @@ Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
 }
 
 
-// bool is_path_extant();
+
+
+
+
+
+
+
+
 
 
 // void shortest_path();     // void shortest_path(Djikstra's Algo) 
 void Graph::shortest_path() {
-    // soon...
 
 }
 
@@ -102,7 +106,30 @@ void Graph::shortest_path() {
 // void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
 void Graph::min_span_tree() {
     // soon...
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int Graph::get_num_edge() {
@@ -113,3 +140,4 @@ int Graph::get_num_edge() {
 int Graph::get_num_vertex() {
     return num_vertex;
 }
+

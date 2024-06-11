@@ -23,7 +23,7 @@ class Graph {
         Graph(); //constructor
         ~Graph(); // deconstructor
         void add_vertex(string name);
-        void add_edge(string edge_name, int weight, Vertex *origin, Vertex *destination);
+        void add_edge(int weight, Vertex *origin, Vertex *destination);
         Vertex *find_vertex(string name);
         Edge *find_edge(Vertex *origin, Vertex *destination); // idk how to search for an edge without a name. 
         // edges could inherit name from origin and destination names.
@@ -34,5 +34,7 @@ class Graph {
         void shortest_path();     // void shortest_path(Djikstra's Algo)  
         void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
 
-        int test_function();
+
+        void print_graph();
+        // int test_function();
 };

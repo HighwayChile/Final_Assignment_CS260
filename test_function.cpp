@@ -112,11 +112,11 @@ void test_function() {
     Vertex *vertexB = graph.find_vertex("B");
     Vertex *vertexC = graph.find_vertex("C");
 
-    if (vertexA && vertexB && vertexC) {
-        graph.add_edge("A/B", 10, vertexA, vertexB);
-        graph.add_edge("B/C", 20, vertexB, vertexC);
-        graph.add_edge("C/A" , 30, vertexC, vertexA);
-    }
+    // if (vertexA && vertexB && vertexC) {
+    //     graph.add_edge("A/B", 10, vertexA, vertexB);
+    //     graph.add_edge("B/C", 20, vertexB, vertexC);
+    //     graph.add_edge("C/A" , 30, vertexC, vertexA);
+    // }
 
     cout << "Number of vertices: " << graph.get_num_vertex() << endl;
     cout << "Number of edges: " << graph.get_num_edge() << endl;
@@ -138,8 +138,36 @@ void test_function() {
 }
 
 
-int main() {
-    test_function();
+void simple_graph_test() {
+    cout << "Create Simple Graph" << endl;
+    cout << "Creating Graph... " << endl;
+    Graph simple_graph;
+    cout << "Adding nodes A, B, and C... " << endl;
+    // Vertex vertexA("A")
+    simple_graph.add_vertex("A");
+    simple_graph.add_vertex("B");
+    simple_graph.add_vertex("C");
 
+    simple_graph.print_graph();
+
+    cout << "Adding unnamed edges... " << endl;
+    // simple_graph
+    simple_graph.add_edge(3, simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
+    simple_graph.add_edge(6, simple_graph.find_vertex("B"), simple_graph.find_vertex("C"));
+    simple_graph.add_edge(1, simple_graph.find_vertex("C"), simple_graph.find_vertex("A"));
+
+    simple_graph.print_graph();
+
+    cout << endl;
+    cout << "Quitting Program..." << endl;
+    system("pause");
+}
+
+
+
+
+int main() {
+    // test_function();
+    simple_graph_test();
     return 0;
 }

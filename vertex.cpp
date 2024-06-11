@@ -31,8 +31,6 @@ int Vertex::num_edges_attached(){
 }
 
 
-
-// I am going to change how to add neighbors.
 void Vertex::add_neighbor(int weight, Vertex *new_vertex){
     Edge *new_edge = new Edge(weight, this, new_vertex);
 

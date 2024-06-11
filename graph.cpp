@@ -56,12 +56,14 @@ void Graph::add_vertex(string name) {
 }
 
 
-void Graph::add_edge(string edge_name, int weight, Vertex *origin, Vertex *destination) {
+void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
     Edge *new_edge = new Edge(weight, origin, destination);
     // missed this line here, too. Was reminded by ChatGPT, but remember Joseph Jess' comments.
     edges.push_back(new_edge);
     // WHEN YOU ADD AN EDGE, YOU SHOULD NAME THAT EDGE!
     num_edge++;
+
+    new_edge->create_name(origin, destination);
 
     // string edge_name = origin->name + "/" + destination->name;
     // // return edge_name;
@@ -81,7 +83,7 @@ Vertex *Graph::find_vertex(string name) {
 }
 
 
-// Edge find_edge(name) // idk how to search for an edge without a name. 
+// Edge find_edge(name) // idk how to search for an edge without a name. - I assigned the names
 // edges could inherit name from origin and destination names.
 // i.e. - Alpha/Bravo could be one edge that goes between nodes 1 and 2.
 Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
@@ -143,7 +145,18 @@ void Graph::min_span_tree() {
 
 
 
-
+void Graph::print_graph() {
+    cout << "NODES: ";
+    for(Vertex *vertex : vertices) {
+        cout << vertex->name << " ,";
+    }
+    cout << endl;
+    cout << "Edges: ";
+    for(Edge *edge : edges) {
+        cout << edge->edge_name << " ,";
+    }
+    cout << endl;
+}
 
 
 

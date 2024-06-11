@@ -10,12 +10,10 @@ struct Vertex;
 struct Edge {
     private:
         int weight;
-        string edge_name;
-        // Vertex *origin;
-        // Vertex *destination;
-        // string create_name(*origin, *destination);
+        // string edge_name;
 
     public:
+        string edge_name;
         Vertex *origin;
         Vertex *destination;
         Edge(int new_weight, Vertex *new_origin, Vertex *new_destination);

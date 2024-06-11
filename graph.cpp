@@ -41,6 +41,7 @@ Graph::Graph(){
 Graph::~Graph() {
     for(Vertex *vertex : vertices) {
         delete vertex;
+        // Vertex::~Vertex();
     }
     for(Edge *edge : edges) {
         delete edge;
@@ -134,12 +135,12 @@ void Graph::min_span_tree() {
 void Graph::print_graph() {
     cout << "NODES: ";
     for(Vertex *vertex : vertices) {
-        cout << vertex->name << " ,";
+        cout << vertex->name << ", ";
     }
     cout << endl;
     cout << "Edges: ";
     for(Edge *edge : edges) {
-        cout << edge->edge_name << " ,";
+        cout << edge->edge_name << ", ";
     }
     cout << endl;
 }

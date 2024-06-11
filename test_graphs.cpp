@@ -94,16 +94,3 @@ int bin_tree_test() {
     return 1;
 }
 
-
-
-
-
-
-int main() {
-    simple_graph_test();
-    bin_tree_test();
-    // return 0;
-    cout << endl;
-    cout << "Quitting Program..." << endl;
-    system("pause");
-}

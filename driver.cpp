@@ -1,12 +1,12 @@
+
 #include <iostream>
 #include <vector>
 #include <limits>
 
-// #include "testor.cpp"
-#include "test_function.cpp"
-#include "vertex.cpp"
-#include "edge.cpp"
-#include "graph.cpp"
+#include "test_graphs.cpp"
+// #include "vertex.cpp"
+// #include "edge.cpp"
+// #include "graph.cpp"
 #include "vertex.h"
 #include "edge.h"
 #include "graph.h"
@@ -17,8 +17,8 @@ using namespace std;
 
 void show_menu() {
     cout << "GRAPH MENU\n" 
-    "1. RUN TESTS\n"
-    "2. Choice 2\n"
+    "1. Test Simple Graph\n"
+    "2. Test Binary Tree\n"
     "3. Choice 3\n"
     "4. Choice 4\n"
     "5. Display Menu\n"
@@ -41,11 +41,13 @@ int main() {
             switch (menu_choice) {
             case 1:
 
-                cout << "RUN TESTS" << endl;
-                test_function();
+                cout << "simple_graph_test" << endl;
+                // test_function();
+                simple_graph_test();
                 break;
             case 2:
-                cout << "case 2 chosen" << endl;
+                cout << "bin_tree_test" << endl;
+                bin_tree_test();
                 break;  
             case 3:
                 cout << "case 3 chosen" << endl;

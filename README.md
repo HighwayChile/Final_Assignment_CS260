@@ -12,7 +12,12 @@ sometimes would not improve my program. Therefore, my planning document (this RE
 
 My driver.cpp file works, but it is not a realistic driver of my program. If you want to compile 
 and run something, your best bet is to compile and run test_function.cpp. This function shows a 
-realistic set of manipulations to the graph.  
+realistic set of manipulations to the graphs.  
+
+I also noticed that I found myself putting off applying the algorithms, and instead I would create more 
+functions to manipulate the graph or call for more information. I was trying to lay the groundworks for 
+an interactive program, but I think I took it too far. Now I am scrambling to implement the algorithms 
+properly.  
 
 Thank you  
 

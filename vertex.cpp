@@ -1,4 +1,4 @@
-#include <iostream>
+// #include <iostream>
 #include "edge.h"
 #include "vertex.h"
 
@@ -10,10 +10,10 @@ Vertex::Vertex(string new_name) {
 }
 
 Vertex::~Vertex(){
-    for (Edge *edge: *neighbors) {
+    for (Edge *edge : *neighbors) {
         delete edge;
     }
-    delete neighbors;
+    // delete neighbors;
 }
 
 string Vertex::get_name(){

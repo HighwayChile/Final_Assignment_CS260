@@ -1,7 +1,7 @@
 #pragma once
 
-#include <iostream>
-#include <string>
+// #include <iostream>
+// #include <string>
 #include "vertex.h"
 
 using namespace std;
@@ -11,13 +11,14 @@ struct Vertex;
 struct Edge {
     private:
         int weight;
+        Vertex *origin;
+        Vertex *destination;
 
     public:
         string edge_name;
-        Vertex *origin;
-        Vertex *destination;
         Edge(int new_weight, Vertex *new_origin, Vertex *new_destination);
         ~Edge();
+
         int get_weight();
         Vertex *get_origin();
         Vertex *get_destination();

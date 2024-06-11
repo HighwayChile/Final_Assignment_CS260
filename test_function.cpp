@@ -35,7 +35,7 @@ int simple_graph_test() {
     simple_graph.add_edge(3, simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     simple_graph.add_edge(6, simple_graph.find_vertex("B"), simple_graph.find_vertex("C"));
     simple_graph.add_edge(1, simple_graph.find_vertex("C"), simple_graph.find_vertex("A"));
-    simple_graph.find_edge(simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
+    // simple_graph.find_edge(simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     cout << endl;
 
     simple_graph.print_graph();
@@ -80,7 +80,6 @@ int bin_tree_test() {
     simple_tree.add_edge(2, simple_tree.find_vertex("C"), simple_tree.find_vertex("G"));
     simple_tree.add_edge(2, simple_tree.find_vertex("G"), simple_tree.find_vertex("H"));
     simple_tree.add_edge(2, simple_tree.find_vertex("G"), simple_tree.find_vertex("I"));
-    // simple_tree.find_edge(simple_tree.find_vertex("G"), simple_tree.find_vertex("I"));
     cout << endl;
 
     simple_tree.print_graph();
@@ -179,7 +178,7 @@ int complex_span_tree_test() {
     complex_tree.add_edge(8, complex_tree.find_vertex("2"), complex_tree.find_vertex("5"));
 
     complex_tree.add_edge(7, complex_tree.find_vertex("3"), complex_tree.find_vertex("4"));
-    complex_tree.add_edge(6, complex_tree.find_vertex("3"), complex_tree.find_vertex("6"));
+    complex_tree.add_edge(5, complex_tree.find_vertex("3"), complex_tree.find_vertex("6"));
 
     complex_tree.add_edge(8, complex_tree.find_vertex("4"), complex_tree.find_vertex("5"));
     complex_tree.add_edge(8, complex_tree.find_vertex("4"), complex_tree.find_vertex("6"));
@@ -200,6 +199,22 @@ int complex_span_tree_test() {
     complex_tree.print_graph();
     cout << endl;
 
+    // cout << "Sorted spanning tree" << endl;
+    // complex_tree.min_span_tree();
+    // cout << endl;
+
+    // cout << "EXPECTED: 'congrats' 17 times" << endl;
+
+
+    
+    cout << "Number of vertices: " << complex_tree.get_num_vertex() << endl;
+    cout << "Number of edges: " << complex_tree.get_num_edge() << endl;
+    // cout << "Number of edges: " << complex_treenum_edge << endl;
+    cout << endl;
+
+
+    cout << "TESTING SHORT PATH CONNECTIONS" << endl;
+    complex_tree.min_span_tree();
 
     return 1;
 

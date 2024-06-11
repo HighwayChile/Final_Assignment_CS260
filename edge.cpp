@@ -1,6 +1,6 @@
 #include "edge.h"
 #include "vertex.h"
-#include <string>
+// #include <string>
 
 using namespace std;
 
@@ -13,20 +13,17 @@ Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
 }
 
 Edge::~Edge(){
-    delete destination;
-    delete origin;
-    delete &weight;
+    // delete destination;
+    // delete origin;
 }
 
 int Edge::get_weight(){
     return weight;
 }
 
-
 Vertex *Edge::get_origin(){
     return origin;
 }
-
 
 Vertex *Edge::get_destination(){
     return destination;

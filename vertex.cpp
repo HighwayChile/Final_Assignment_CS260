@@ -16,7 +16,6 @@ Vertex::~Vertex(){
     delete neighbors;
 }
 
-
 string Vertex::get_name(){
     return name;
 }
@@ -30,7 +29,6 @@ int Vertex::num_edges_attached(){
     return neighbors->size();
 }
 
-
 void Vertex::add_neighbor(int weight, Vertex *new_vertex){
     Edge *new_edge = new Edge(weight, this, new_vertex);
 
@@ -42,5 +40,3 @@ void Vertex::print_neighbors() {
         cout << " \n- " << "Name: " << edge->get_destination()->get_name() << ", weight: " << edge->get_weight() << " - ";
     }
 }
-
-

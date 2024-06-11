@@ -36,13 +36,11 @@ int main() {
         int menu_max = 6;
 
         if(cin >> menu_choice && menu_choice <= menu_max && menu_choice >= 1) {
-            // cin.ignore();
 
             switch (menu_choice) {
             case 1:
 
                 cout << "simple_graph_test" << endl;
-                // test_function();
                 simple_graph_test();
                 break;
             case 2:
@@ -66,7 +64,6 @@ int main() {
                 break;  
             
             default:
-                // cout << "PLEASE CHOOSE VALID INPUT" << endl;
                 break;
             }
 

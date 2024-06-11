@@ -45,9 +45,7 @@ int simple_graph_test() {
     simple_graph.~Graph();
 
     return 1;
-
 }
-
 
 int bin_tree_test() {
     cout << "Create Binary Tree" << endl;
@@ -90,7 +88,6 @@ int bin_tree_test() {
 
     simple_tree.~Graph();
 
-    // simple_tree.print_graph();
     return 1;
 }
 

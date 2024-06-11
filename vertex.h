@@ -15,7 +15,7 @@ struct Vertex {
     // Research vector more
     vector<Edge *> *neighbors;
 
-    Vertex(string new_name); // constructor MUST FIX!!!!
+    Vertex(string new_name);
     ~Vertex();
     string get_name();
     vector<Edge *> *get_neighbors();

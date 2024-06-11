@@ -4,9 +4,6 @@
 #include <limits>
 
 #include "test_graphs.cpp"
-// #include "vertex.cpp"
-// #include "edge.cpp"
-// #include "graph.cpp"
 #include "vertex.h"
 #include "edge.h"
 #include "graph.h"
@@ -19,7 +16,7 @@ void show_menu() {
     cout << "GRAPH MENU\n" 
     "1. Test Simple Graph\n"
     "2. Test Binary Tree\n"
-    "3. Choice 3\n"
+    "3. Simple Spanning Tree\n"
     "4. Choice 4\n"
     "5. Display Menu\n"
     "6. Quit\n" 
@@ -48,7 +45,8 @@ int main() {
                 bin_tree_test();
                 break;  
             case 3:
-                cout << "case 3 chosen" << endl;
+                cout << "simple_span_tree" << endl;
+                simple_span_tree_test();
                 break;
             case 4:
                 cout << "case 4 chosen" << endl;

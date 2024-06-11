@@ -30,6 +30,7 @@ int Vertex::num_edges_attached(){
 }
 
 void Vertex::add_neighbor(int weight, Vertex *new_vertex){
+    // research "this" more
     Edge *new_edge = new Edge(weight, this, new_vertex);
 
     neighbors->push_back(new_edge);

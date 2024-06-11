@@ -75,6 +75,13 @@ void Graph::print_graph() {
         cout << edge->edge_name << ", ";
     }
     cout << endl;
+    cout << "Edge weights: ";
+    for(Edge *edge : edges) {
+        // cout << edge->edge_name << " weight: " << edge->get_weight() << ", ";
+        cout << edge->edge_name << " weight: " << edge->get_weight() << endl;
+
+    }
+    cout << endl;    
 }
 
 // void shortest_path();     // void shortest_path(Djikstra's Algo) 

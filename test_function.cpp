@@ -199,17 +199,9 @@ int complex_span_tree_test() {
     complex_tree.print_graph();
     cout << endl;
 
-    // cout << "Sorted spanning tree" << endl;
-    // complex_tree.min_span_tree();
-    // cout << endl;
 
-    // cout << "EXPECTED: 'congrats' 17 times" << endl;
-
-
-    
     cout << "Number of vertices: " << complex_tree.get_num_vertex() << endl;
     cout << "Number of edges: " << complex_tree.get_num_edge() << endl;
-    // cout << "Number of edges: " << complex_treenum_edge << endl;
     cout << endl;
 
 

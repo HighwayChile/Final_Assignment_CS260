@@ -1,4 +1,4 @@
-// #include <iostream>
+#include <iostream>
 #include "edge.h"
 #include "vertex.h"
 
@@ -9,6 +9,7 @@ Vertex::Vertex(string new_name) {
     neighbors = new vector<Edge *>();
 }
 
+// must verify deconstructor works
 Vertex::~Vertex(){
     for (Edge *edge : *neighbors) {
         delete edge;
@@ -36,6 +37,7 @@ void Vertex::add_neighbor(int weight, Vertex *new_vertex){
     neighbors->push_back(new_edge);
 }
 
+// this should have been imoved to graph.cpp, but ran out of time. include <iostream> to solve
 void Vertex::print_neighbors() {
     for(Edge *edge : *neighbors) {
         cout << " \n- " << "Name: " << edge->get_destination()->get_name() << ", weight: " << edge->get_weight() << " - ";

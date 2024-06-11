@@ -1,9 +1,9 @@
 #include "edge.h"
 #include "vertex.h"
-// #include <string>
 
 using namespace std;
 
+// creating an edge creates a name
 Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
     weight = new_weight;
     origin = new_origin;
@@ -12,6 +12,7 @@ Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
     edge_name = origin->name + "/" + destination->name;
 }
 
+// Need fix this deconstructor - delete pointers?
 Edge::~Edge(){
     // delete destination;
     // delete origin;

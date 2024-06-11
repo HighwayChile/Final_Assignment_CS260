@@ -2,9 +2,6 @@
 
 #include <vector>
 #include <string>
-// #include <sstream>
-
-// #include "edge.h"
 
 using namespace std;
 
@@ -22,5 +19,4 @@ struct Vertex {
     int num_edges_attached();
     void add_neighbor(int weight, Vertex *new_vertex);
     void print_neighbors();
- 
 };  

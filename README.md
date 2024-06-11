@@ -1,11 +1,28 @@
-# Final_Assignment_CS260   
-Final for CS260, Spring 2024 - Make a Graph  
+# Final_Assignment_CS260    
+Final for CS260, Spring 2024 - Make a Graph   
 
 
-# Program Flow
+# Main message to Instructor    
+
+Hello! Thank you for teaching us out! I know I have told you several times that I appreciate it, 
+but it bears repeating!  
+
+My planning phase lasted too long, and I ended up with a hodgepodge of half-baked ideas that 
+sometimes would not improve my program. Therefore, my planning document (this README) is very long.      
+
+My driver.cpp file works, but it is not a realistic driver of my program. If you want to compile 
+and run something, your best bet is to compile and run test_function.cpp. This function shows a 
+realistic set of manipulations to the graph.  
+
+Thank you  
 
 
-* NOTE - I still like some of this functionality, but it doesn't quite make sense. change  
+
+# Design    
+
+# Program Flow  
+
+* NOTE - This program flow did not make it in. driver.cpp is not set up properly    
 intro   
 menu    
 start   
@@ -20,10 +37,7 @@ request edge
 user input edge    
 
 
-
-
-# Design    
-
+# General  
 
 * NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
 I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.   
@@ -251,6 +265,25 @@ At the termination of the algorithm, the forest forms a minimum spanning forest 
 
 resource sites:  
 ---------------  
+Kruskal's Algortihm:
+---------------
+
+https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/ 
+
+https://en.wikipedia.org/wiki/Kruskal%27s_algorithm 
+
+(I also used my own notes from MTH231)
+
+
+Dijkstra's Algorthm
+----------------
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm 
+
+
+
+
+OpenGL(I never used OpenGL at all)
+----------------
 
 openGL - getting started https://www.khronos.org/opengl/wiki/Getting_Started#Downloading_OpenGL    
 

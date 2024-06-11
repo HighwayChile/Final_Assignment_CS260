@@ -19,7 +19,7 @@ struct Edge {
         Edge(int new_weight, Vertex *new_origin, Vertex *new_destination);
         ~Edge();
         int get_weight();
-        string create_name(Vertex *origin, Vertex *destination);
+        // string create_name(Vertex *origin, Vertex *destination);
         Vertex *get_origin();
         Vertex *get_destination();
 

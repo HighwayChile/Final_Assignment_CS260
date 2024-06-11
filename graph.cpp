@@ -63,19 +63,25 @@ void Graph::add_edge(int weight, Vertex *origin, Vertex *destination) {
     // WHEN YOU ADD AN EDGE, YOU SHOULD NAME THAT EDGE!
     num_edge++;
 
-    new_edge->create_name(origin, destination);
+    // cout << new_edge->edge_name << endl;
 
-    // string edge_name = origin->name + "/" + destination->name;
-    // // return edge_name;
-    // cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
-    // return edge_name;
 }
+
+
+// string Graph::create_name(Vertex *origin, Vertex *destination) {
+
+//     string edge_name = origin->name + "/" + destination->name;
+//     // return edge_name;
+//     cout << "\nTHIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
+//     return edge_name;
+// }
+
 
 
 Vertex *Graph::find_vertex(string name) {
     for(Vertex *vertex : vertices) {
         if(vertex->get_name() == name) {
-            cout << "find_vertex(): " << vertex->name << endl;
+            // cout << "find_vertex(): " << vertex->name << endl;
             return vertex;
         }
     }
@@ -83,9 +89,6 @@ Vertex *Graph::find_vertex(string name) {
 }
 
 
-// Edge find_edge(name) // idk how to search for an edge without a name. - I assigned the names
-// edges could inherit name from origin and destination names.
-// i.e. - Alpha/Bravo could be one edge that goes between nodes 1 and 2.
 Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
     for(Edge *edge : edges) {
         if(edge->get_origin() == origin || edge->get_destination() == destination) {
@@ -94,23 +97,6 @@ Edge *Graph::find_edge(Vertex *origin, Vertex *destination) {
     }
     return nullptr;
 }
-
-
-
-
-// string Edge::create_name(Vertex *origin, Vertex *destination) {
-
-//     string edge_name = origin->name + "/" + destination->name;
-//     // return edge_name;
-//     cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
-//     return edge_name;
-// }
-
-
-
-
-
-
 
 
 

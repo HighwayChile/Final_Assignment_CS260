@@ -8,6 +8,8 @@ Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
     weight = new_weight;
     origin = new_origin;
     destination = new_destination;
+    edge_name = origin->name + "/" + destination->name;
+    // string edge_name = origin->name + "/" + destination->name; 
 }
 
 Edge::~Edge(){
@@ -31,10 +33,10 @@ Vertex *Edge::get_destination(){
 }
 
 
-string Edge::create_name(Vertex *origin, Vertex *destination) {
+// string Edge::create_name(Vertex *origin, Vertex *destination) {
 
-    string edge_name = origin->name + "/" + destination->name;
-    // return edge_name;
-    cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
-    return edge_name;
-}
+//     string edge_name = origin->name + "/" + destination->name;
+//     // return edge_name;
+//     cout << "\n THIS IS THE EDGE NAME: " << edge_name << "\n" << endl;
+//     return edge_name;
+// }

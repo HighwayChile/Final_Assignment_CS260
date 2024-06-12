@@ -4,14 +4,21 @@ Final for CS260, Spring 2024 - Make a Graph
 Locations of required modules/functions:  
 --------------------------   
 
-Design: \Design\Design.md    
-Tests: \test_function.cpp     
-Graph class: \graph.h, \graph.cpp    
+Design:  
+\Design\Design.md    
+Tests:  
+\test_function.cpp       
+Graph class:   
+\graph.h     
 
-add_vertex(): \graph.cpp - line 28     
-add_edge(): \graph.cpp - line 35    
-shortest_path(): \graph.cpp - line 159      
-min_spanning_tree(): \graph.cpp - line 94     
+add_vertex():  
+\graph.cpp - line 28     
+add_edge():  
+\graph.cpp - line 35    
+shortest_path():  
+\graph.cpp - line 159      
+min_spanning_tree():   
+\graph.cpp - line 94     
 
 
 Complexity analysis:  

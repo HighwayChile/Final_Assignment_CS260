@@ -12,12 +12,6 @@ Edge::Edge(int new_weight, Vertex *new_origin, Vertex *new_destination) {
     edge_name = origin->name + "/" + destination->name;
 }
 
-// Need fix this deconstructor - delete pointers?
-Edge::~Edge(){
-    // delete destination;
-    // delete origin;
-}
-
 // these are methods to fetch the private attributes
 int Edge::get_weight(){
     return weight;

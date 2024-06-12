@@ -9,13 +9,6 @@ Vertex::Vertex(string new_name) {
     neighbors = new vector<Edge *>();
 }
 
-// must verify deconstructor works
-Vertex::~Vertex(){
-    for (Edge *edge : *neighbors) {
-        delete edge;
-    }
-    // delete neighbors;
-}
 
 string Vertex::get_name(){
     return name;

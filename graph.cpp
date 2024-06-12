@@ -2,7 +2,6 @@
 #include <vector>
 #include <algorithm> // allows use of "sort"
 
-// #include "short_path.cpp"
 #include "disjoint_union.h"
 #include "graph.h"
 #include "vertex.h"
@@ -15,7 +14,7 @@ Graph::Graph(){
     num_edge = 0;
 }
 
-// deconstructor must iterate through array - VERIFY!!
+// deconstructor must iterate through array - VERIFY!! - I don't think it works :(
 Graph::~Graph() {
     for(Vertex *vertex : vertices) {
         delete vertex;
@@ -136,6 +135,8 @@ void Graph::min_span_tree() {
 // This is my attempt at appying Djikstra's Algorithm.
 // this is almost directly copied from Geeksforgeeks. I did copy the code, then I modified it.
 // It searches for neighboring vertices to find the shortest path(in number of vertices)
+// It prints out every single vertex in the graph, then shows how far that vertex is from the 
+// source, which is fed into the shortest_path() function as a string.
 
 int Graph::min_distance(vector<int> &dist, vector<bool> &spt_set) {
     int min = INT_MAX, min_index;

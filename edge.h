@@ -17,7 +17,6 @@ struct Edge {
     // function defclarations
         string edge_name;
         Edge(int new_weight, Vertex *new_origin, Vertex *new_destination);
-        ~Edge();
 
         int get_weight();
         Vertex *get_origin();

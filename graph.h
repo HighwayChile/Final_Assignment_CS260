@@ -26,17 +26,15 @@ class Graph {
 
         Vertex *find_vertex(string name);
         Edge *find_edge(Vertex *origin, Vertex *destination); 
-        // could add find_edge_string to make searching easier/programming more difficult
 
         int get_num_edge();
         int get_num_vertex();
         
-        void shortest_path(string src_name);   // void shortest_path(Djikstra's Algo)  
-        void min_span_tree();                              // void min_span_tree(Kruskal's Algo)
+        void shortest_path(string src_name);    // void shortest_path(Djikstra's Algo)  
+        void min_span_tree();                   // void min_span_tree(Kruskal's Algo)
 
         int min_distance(vector<int> &dist, vector<bool> &spt_set);
         void print_solution(vector<int> &dist);
-
 
         void print_graph();
 };

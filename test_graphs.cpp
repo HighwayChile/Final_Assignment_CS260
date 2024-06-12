@@ -135,6 +135,19 @@ int simple_span_tree_test() {
     cout << "(simple tree)" << endl;
     simple_tree.min_span_tree();
 
+    cout << "SHORTEST PATHS FROM VERTEX 'A'" << endl;
+    simple_tree.shortest_path("A");
+    cout << "SHORTEST PATHS FROM VERTEX 'B'" << endl;
+    simple_tree.shortest_path("B");
+    cout << "SHORTEST PATHS FROM VERTEX 'C'" << endl;
+    simple_tree.shortest_path("C");
+    cout << "SHORTEST PATHS FROM VERTEX 'D'" << endl;
+    simple_tree.shortest_path("D");
+    cout << "SHORTEST PATHS FROM VERTEX 'E'" << endl;
+    simple_tree.shortest_path("E");
+    cout << "SHORTEST PATHS FROM VERTEX 'F'" << endl;
+    simple_tree.shortest_path("F");
+
     return 1;
 }
 
@@ -202,6 +215,8 @@ int complex_span_tree_test() {
     complex_tree.min_span_tree();
     cout << endl;
 
+    cout << "SHORTEST PATHS FROM VERTEX '1'" << endl;
+    complex_tree.shortest_path("1");
+
     return 1;
 }
-

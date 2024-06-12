@@ -13,7 +13,6 @@ struct Vertex {
     vector<Edge *> *neighbors;
 
     Vertex(string new_name);
-    ~Vertex();
     string get_name();
     vector<Edge *> *get_neighbors();
     int num_edges_attached();

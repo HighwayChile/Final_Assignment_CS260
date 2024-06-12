@@ -3,8 +3,6 @@
 #include <string>
 #include <vector>
 
-#include "vertex.h"
-
 using namespace std;
 
 class Graph {

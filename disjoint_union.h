@@ -53,8 +53,6 @@ class DisjointUnion {
                     // Increment the placement of the chosen set
                     place[root_u]++;
                 }
-
-            }
-            
+            }  
         }
 };

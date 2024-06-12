@@ -69,6 +69,14 @@ functions to manipulate the graph or call for more information. I was trying to 
 an interactive program, but I think I took it too far. Then I had to scramble to implement the algorithms 
 properly. Luckily, I noticed my own fault while I still had time to at least get a form of each algorithm working on my graph.     
 
+I really wish I had gotten Djikstra's working the way I had wanted, exactly. I know I can, but I am running out of time.  
+
+My favorite part of this project was the learning! Perhaps more accurately: when I noticed all that I had learned. Several times 
+during this project I found myself solving problems without having to ask someone else for a solution, or without looking anything 
+up. I think I still needed to reference the compiler error messages every time, but I consider that to be minimal prompting. Overall 
+this was a very challenging project, and I was very lost many times, but I was definitely able to apply a good array of the tools I 
+have collected over the past term. C++ is probably one of my favorite languages so far!   
+
 Thank you!  
 
 Sincerely, HighwayChile(name redacted for public repo)   

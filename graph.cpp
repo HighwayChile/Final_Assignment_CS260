@@ -4,8 +4,6 @@
 
 #include "disjoint_union.h"
 #include "graph.h"
-#include "vertex.h"
-#include "edge.h"
 
 using namespace std;
 

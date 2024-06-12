@@ -57,7 +57,7 @@ shortest_path is O(n^2)
 Hello! Thank you for teaching us out! I know I have told you several times that I appreciate it, 
 but it bears repeating!  
 
-For this project planning phase lasted too long, and I ended up with a hodgepodge of half-baked ideas that 
+For this project my planning phase lasted too long, and I ended up with a hodgepodge of half-baked ideas that 
 sometimes might improve my program. Therefore, my Design.md document is very long.      
 
 My driver.cpp file works, but it is not a realistic driver of my program. It is more of a testing environment. If you want to compile 

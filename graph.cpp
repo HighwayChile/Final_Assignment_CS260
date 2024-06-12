@@ -170,11 +170,9 @@ void Graph::shortest_path(string src_name) {
         return;
     }
 
-
     vector<int> dist(num_vertex, INT_MAX);
     vector<bool> spt_set(num_vertex, false);
     dist[src] = 0;
-
 
     for(int count = 0; count < num_vertex - 1; count++) {
         int u = min_distance(dist, spt_set);

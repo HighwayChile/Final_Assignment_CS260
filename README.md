@@ -14,7 +14,7 @@ shortest_path(): \graph.cpp - line 159
 min_spanning_tree(): \graph.cpp - line 94     
 
 
-Complexity analyzation:  
+Complexity analysis:  
 -----------------------  
 driver.cpp:  
 driver function uses swtich, which is O(1)  

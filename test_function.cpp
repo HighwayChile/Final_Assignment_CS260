@@ -135,6 +135,13 @@ int simple_span_tree_test() {
     cout << "(simple tree)" << endl;
     simple_tree.min_span_tree();
 
+    simple_tree.shortest_path("A");
+    simple_tree.shortest_path("B");
+    simple_tree.shortest_path("C");
+    simple_tree.shortest_path("D");
+    simple_tree.shortest_path("E");
+    simple_tree.shortest_path("F");
+
     return 1;
 }
 
@@ -201,6 +208,15 @@ int complex_span_tree_test() {
     cout << "(complex tree)" << endl;
     complex_tree.min_span_tree();
     cout << endl;
+
+    complex_tree.shortest_path("1");
+    // complex_tree.shortest_path("2");
+    // complex_tree.shortest_path("3");
+    // complex_tree.shortest_path("4");
+    // complex_tree.shortest_path("5");
+    // complex_tree.shortest_path("6");
+    // complex_tree.shortest_path("7");
+    // complex_tree.shortest_path("8");
 
     return 1;
 }

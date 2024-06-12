@@ -31,11 +31,11 @@ class Graph {
         int get_num_edge();
         int get_num_vertex();
         
-        void shortest_path(Graph &graph, int src);   // void shortest_path(Djikstra's Algo)  
+        void shortest_path(string src_name);   // void shortest_path(Djikstra's Algo)  
         void min_span_tree();                              // void min_span_tree(Kruskal's Algo)
 
-        int min_distance(int dist[], bool spt_set[], int num_vertex);
-        void print_solution(int dist[], int num_vertex);
+        int min_distance(vector<int> &dist, vector<bool> &spt_set);
+        void print_solution(vector<int> &dist);
 
 
         void print_graph();

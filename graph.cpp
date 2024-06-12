@@ -133,57 +133,64 @@ void Graph::min_span_tree() {
 }
 
 
+// This is my attempt at appying Djikstra's Algorithm.
+// this is almost directly copied from Geeksforgeeks. I did copy the code, then I modified it.
+// It searches for neighboring vertices to find the shortest path(in number of vertices)
 
-
-
-
-
-// This is my attempt at appying Djikstra's Algorithm. It is mostly copied from Geeksforgeeks.
-// does not work
-
-
-
-int Graph::min_distance(int dist[], bool spt_set[], int num_vertex) {
+int Graph::min_distance(vector<int> &dist, vector<bool> &spt_set) {
     int min = INT_MAX, min_index;
 
-    for(int v = 0; v < num_vertex; v++)
-        if(spt_set[v] == false && dist[v] <= min)
-            min = dist[v], min_index = v;
+    for(int v = 0; v < num_vertex; v++){
+        if(!spt_set[v] && dist[v] <= min) {
+            min = dist[v];
+            min_index = v;
 
+        }
+    }
     return min_index;
 }
 
-
-void Graph::print_solution(int dist[], int num_vertex) {
+void Graph::print_solution(vector<int> &dist) {
     cout << "Vertex \t Distance from source" << endl;
     for(int i = 0; i < num_vertex; i++)
-        cout << i << "\t\t\t\t" << dist[i] << endl;
+        cout << vertices[i]->get_name() << " \t " << dist[i] << endl;
 }
 
+void Graph::shortest_path(string src_name) {
+    int src = - 1;
 
-// void shortest_path(int graph[][V], int src) {
-void Graph::shortest_path(Graph &graph, int src) {
-    int num_vertex = graph.get_num_vertex();
-
-    int *dist = new int[num_vertex];
-    bool *spt_set = new bool[num_vertex];
-
-    for(int i = 0; i < num_vertex; i++) 
-    dist[i] = INT_MAX, spt_set[i] = false;
-
-    dist[src] = 0;
-
-    for(int count = 0; count < num_vertex - 1; count++) {
-        int u = min_distance(dist, spt_set, num_vertex);
-        spt_set[u] = true;
-
-        for(int v = 0; v < num_vertex; v++) {
-            // int weight = graph.find_edge(find_vertex(), find_vertex());
-            int weight = edge->get_weight();
-            if(!spt_set[v] && graph[u][v] && dist[u] != INT_MAX 
-            && dist[u] + graph[u][v] < dist[v])
-            dist[v] = dist[u] + graph[u][v];
+    for(int i = 0; i < num_vertex; i++) {
+        if(vertices[i]->get_name() == src_name) {
+            src = i;
+            break;
         }
     }
-    print_solution(dist, num_vertex);
+    if(src == -1) {
+        cout << "Source not found" << endl;
+        return;
+    }
+
+
+    vector<int> dist(num_vertex, INT_MAX);
+    vector<bool> spt_set(num_vertex, false);
+    dist[src] = 0;
+
+
+    for(int count = 0; count < num_vertex - 1; count++) {
+        int u = min_distance(dist, spt_set);
+        spt_set[u] = true;
+
+        for(int v = 0; v < num_vertex; v++) {;
+            Edge *edge = find_edge(vertices[u], vertices[v]);
+            if(!spt_set[v] && edge && dist[u] != INT_MAX && dist[u] + edge->get_weight() < dist[v]) {
+                dist[v] = dist[u] + edge->get_weight();
+            }
+        }
+    }
+    print_solution(dist);
 }
+
+
+
+
+

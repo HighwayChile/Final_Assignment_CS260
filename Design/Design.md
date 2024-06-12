@@ -20,10 +20,6 @@ user input edge
 
 # General  
 
-* NOTE - I am considering doing something else now that I saw the note: "yes, this can be a game that needs a graph to represent a map!"  
-I think I am going to say that each vertex represents a room, and each edge is a pathway to/from that room.   
-
-Pathfinding algorithm? - it's an idea!    
 
 * This was from when I was thinking I might use openGL (never have used it before, and changed my mind about it)  
 
@@ -160,23 +156,23 @@ bool graph::is_path_extant(){
         return false;  
     } else {  
         return true;  
-    }
+    }  
 
 }  
 
 
 void graph::shortest_path(){  
-    run is_path_extant() on two inputs, both string, both from user_in  
+    run is_path_extant() on two inputs, both string, both from user_in    
 
-    if (is_path_extant = true) {  
-        use algo to find shortest path  
-    } else {  
-        cout << "not gonna do it" << endl;  
-    }  
-}  // Dijkstra's Algo is roughly Big O(n^2)  
+    if (is_path_extant = true) {    
+        use algo to find shortest path    
+    } else {    
+        cout << "not gonna do it" << endl;    
+    }    
+}  // Dijkstra's Algo is roughly Big O(n^2)   
 
 
-void graph::min_span_tree(){  
+void graph::min_span_tree(){    
     use kruskal's. Remember: this finds a spanning tree!  
 }   
 
@@ -188,7 +184,7 @@ Test functions needed:
 2 tests for each function.  
 
 For testing, I have been testing each functionality as the code comes together enough to test.  
-I have run the first tests, and they are outputting the desired feedback.  
+I have run the first tests, and they are outputting the desired   feedback.  
 My first tests involved manually creating nodes and edges, connecting them, and printing the 
 results to the screen.  
 My second tests will be designed.  
@@ -198,32 +194,32 @@ My second tests will be designed.
 Test Design:  
 ----------------------   
 
-For this test I will create a graph class, populate a graph , then test each connection.
+For this test I will create a graph class, populate a graph , then test each connection.  
 
 My first test graph will be a 3 node graph with three edges.  
-nodes are: A, B, and C  
-edges are: A/B, B/C, and C/A  
-C/A and A/C are equivalent (C/A or A/C)   
+nodes are: A, B, and C    
+edges are: A/B, B/C, and C/A    
+C/A and A/C are equivalent (C/A or A/C)    
 
-My second test graph will be a binary tree  
-nodes are: D, E, F, G, H, I, J, K, L  
-terminal nodes are: G, H, I, K, L  
-edges are: D/E, D/F, E/G, E/H, F/I, F/J, J/K  
-so it looks like this:  
+My second test graph will be a binary tree    
+nodes are: D, E, F, G, H, I, J, K, L    
+terminal nodes are: G, H, I, K, L    
+edges are: D/E, D/F, E/G, E/H, F/I, F/J, J/K    
+so it looks like this:    
 
-            D   
-          /   \   
-         E     F   
-        / \   / \   
-       G   H I   J  
-                / \   
-               K   L  
+            D     
+          /   \     
+         E     F     
+        / \   / \     
+       G   H I   J    
+                / \     
+               K   L    
 
 
 My third test graph will be a more complicated example, 
-which will be good for testing my algorithms.  
-nodes are: M, N, O, P, Q, R, S  
-edges are: ???  
+which will be good for testing my algorithms.    
+nodes are: M, N, O, P, Q, R, S    
+edges are: ???    
 
 
 # REFERENCES & RESOURCES   
@@ -244,42 +240,42 @@ At the termination of the algorithm, the forest forms a minimum spanning forest 
 
 
 
-resource sites:  
+resource sites:    
+---------------    
+Kruskal's Algortihm:  
 ---------------  
-Kruskal's Algortihm:
----------------
 
-https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/ 
+https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/   
 
-https://en.wikipedia.org/wiki/Kruskal%27s_algorithm 
+https://en.wikipedia.org/wiki/Kruskal%27s_algorithm   
 
-(I also used my own notes from MTH231)
+(I also used my own notes from MTH231)  
 
 
-Dijkstra's Algorthm
-----------------
-https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm 
+Dijkstra's Algorthm  
+----------------  
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm   
 
 
 
 
-OpenGL(I never used OpenGL at all)
-----------------
+OpenGL(I never used OpenGL at all)  
+----------------  
 
 openGL - getting started https://www.khronos.org/opengl/wiki/Getting_Started#Downloading_OpenGL    
+  
+openGL tutorial https://ogldev.org/    
 
-openGL tutorial https://ogldev.org/  
+openGL loading library - https://www.khronos.org/opengl/wiki/OpenGL_Loading_Library    
 
-openGL loading library - https://www.khronos.org/opengl/wiki/OpenGL_Loading_Library  
+nvidia driver, Windows (my card, 2070 super) https://www.nvidia.com/Download/driverResults.aspx/224748/en-us/     
+  
 
-nvidia driver, Windows (my card, 2070 super) https://www.nvidia.com/Download/driverResults.aspx/224748/en-us/   
+GLEW - https://glew.sourceforge.net/   
 
+GLFW - https://www.glfw.org/download.html   
 
-GLEW - https://glew.sourceforge.net/  
-
-GLFW - https://www.glfw.org/download.html  
-
-GLAD Multi-Language GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs. - https://glad.dav1d.de/    
+GLAD Multi-Language GL/GLES/EGL/GLX/WGL Loader-Generator based on   the official specs. - https://glad.dav1d.de/    
 
 instructional videos:  
 ---------------------  

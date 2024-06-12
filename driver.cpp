@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <limits>
@@ -8,21 +7,20 @@
 #include "edge.h"
 #include "graph.h"
 
-
 using namespace std;
 
+// This file is just an interactive menu using switch.
 
 void show_menu() {
     cout << "GRAPH MENU\n" 
     "1. Test Simple Graph\n"
     "2. Test Binary Tree\n"
-    "3. Simple Spanning Tree\n"
-    "4. Choice 4\n"
+    "3. Test Simple Spanning Tree\n"
+    "4. Test Complex Spanning Tree\n"
     "5. Display Menu\n"
     "6. Quit\n" 
     << endl;
 }
-
 
 int main() {
 
@@ -49,7 +47,8 @@ int main() {
                 simple_span_tree_test();
                 break;
             case 4:
-                cout << "case 4 chosen" << endl;
+                cout << "complex_span_tree" << endl;
+                complex_span_tree_test();
                 break;
             case 5:
                 cout << "case 5 chosen(Display Menu)" << endl;

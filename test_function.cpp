@@ -1,17 +1,10 @@
-
-#include <iostream>
-#include <vector>
-#include <limits>
-
 #include "vertex.cpp"
 #include "edge.cpp"
 #include "graph.cpp"
-#include "vertex.h"
-#include "edge.h"
-#include "graph.h"
 
 using namespace std;
 
+// Test graphs are exactly the same as test_functions, but are called by driver.cpp
 
 int simple_graph_test() {
     cout << "Create Simple Graph" << endl;
@@ -35,7 +28,6 @@ int simple_graph_test() {
     simple_graph.add_edge(3, simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     simple_graph.add_edge(6, simple_graph.find_vertex("B"), simple_graph.find_vertex("C"));
     simple_graph.add_edge(1, simple_graph.find_vertex("C"), simple_graph.find_vertex("A"));
-    // simple_graph.find_edge(simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     cout << endl;
 
     simple_graph.print_graph();
@@ -70,7 +62,6 @@ int bin_tree_test() {
     simple_tree.print_graph();
     cout << endl;
 
-
     cout << "Adding unnamed edges... " << endl;
     simple_tree.add_edge(5, simple_tree.find_vertex("A"), simple_tree.find_vertex("B"));
     simple_tree.add_edge(4, simple_tree.find_vertex("A"), simple_tree.find_vertex("C"));
@@ -89,7 +80,6 @@ int bin_tree_test() {
 
     return 1;
 }
-
 
 int simple_span_tree_test() {
     /* EXAMPLE
@@ -138,10 +128,15 @@ int simple_span_tree_test() {
     simple_tree.print_graph();
     cout << endl;
 
+    cout << "Number of vertices: " << simple_tree.get_num_vertex() << endl;
+    cout << "Number of edges: " << simple_tree.get_num_edge() << endl;
+    cout << endl;
+
+    cout << "(simple tree)" << endl;
+    simple_tree.min_span_tree();
+
     return 1;
-
 }
-
 
 int complex_span_tree_test() {
 
@@ -199,17 +194,15 @@ int complex_span_tree_test() {
     complex_tree.print_graph();
     cout << endl;
 
-
     cout << "Number of vertices: " << complex_tree.get_num_vertex() << endl;
     cout << "Number of edges: " << complex_tree.get_num_edge() << endl;
     cout << endl;
 
-
-    cout << "TESTING SHORT PATH CONNECTIONS" << endl;
+    cout << "(complex tree)" << endl;
     complex_tree.min_span_tree();
+    cout << endl;
 
     return 1;
-
 }
 
 

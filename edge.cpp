@@ -18,6 +18,7 @@ Edge::~Edge(){
     // delete origin;
 }
 
+// these are methods to fetch the private attributes
 int Edge::get_weight(){
     return weight;
 }

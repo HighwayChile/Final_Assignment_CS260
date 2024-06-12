@@ -9,8 +9,9 @@ using namespace std;
 
 class Graph {
     private:
-        int num_vertex;  // size of vertices
-        int num_edge;    // size of edges
+        // graph size
+        int num_vertex; 
+        int num_edge; 
 
         // collection of nodes
         vector<Vertex *> vertices;
@@ -30,9 +31,12 @@ class Graph {
         int get_num_edge();
         int get_num_vertex();
         
-        void shortest_path();     // void shortest_path(Djikstra's Algo)  
-        void min_span_tree();     // void min_span_tree(Kruskal's Algo) 
+        void shortest_path(Graph &graph, int src);   // void shortest_path(Djikstra's Algo)  
+        void min_span_tree();                              // void min_span_tree(Kruskal's Algo)
+
+        int min_distance(int dist[], bool spt_set[], int num_vertex);
+        void print_solution(int dist[], int num_vertex);
+
 
         void print_graph();
-
 };

@@ -1,30 +1,12 @@
-
-#include <iostream>
-#include <vector>
-#include <limits>
-
 #include "vertex.cpp"
 #include "edge.cpp"
 #include "graph.cpp"
-#include "vertex.h"
-#include "edge.h"
-#include "graph.h"
 
 using namespace std;
 
+// Test graphs are exactly the same as test_functions, but are called by driver.cpp
 
 int simple_graph_test() {
-    /* EXAMPLE
-
-        A-----B
-         \   /
-          \ /
-           C
-
-    Edges inherit name from origin/destination
-    */
-
-
     cout << "Create Simple Graph" << endl;
     cout << "-------------------------" << endl;
     cout << endl;
@@ -46,7 +28,6 @@ int simple_graph_test() {
     simple_graph.add_edge(3, simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     simple_graph.add_edge(6, simple_graph.find_vertex("B"), simple_graph.find_vertex("C"));
     simple_graph.add_edge(1, simple_graph.find_vertex("C"), simple_graph.find_vertex("A"));
-    simple_graph.find_edge(simple_graph.find_vertex("A"), simple_graph.find_vertex("B"));
     cout << endl;
 
     simple_graph.print_graph();
@@ -56,23 +37,9 @@ int simple_graph_test() {
     simple_graph.~Graph();
 
     return 1;
-
 }
 
-
 int bin_tree_test() {
-    /* EXAMPLE
-
-                A
-               / \ 
-              B   \ 
-             / \   C
-            D   E / \ 
-                 F   G 
-                    / \
-                   H   I
-    */
-
     cout << "Create Binary Tree" << endl;
     cout << "-------------------------" << endl;
     cout << endl;
@@ -95,7 +62,6 @@ int bin_tree_test() {
     simple_tree.print_graph();
     cout << endl;
 
-
     cout << "Adding unnamed edges... " << endl;
     simple_tree.add_edge(5, simple_tree.find_vertex("A"), simple_tree.find_vertex("B"));
     simple_tree.add_edge(4, simple_tree.find_vertex("A"), simple_tree.find_vertex("C"));
@@ -112,11 +78,8 @@ int bin_tree_test() {
 
     simple_tree.~Graph();
 
-    // simple_tree.print_graph();
     return 1;
 }
-
-
 
 int simple_span_tree_test() {
     /* EXAMPLE
@@ -134,9 +97,7 @@ int simple_span_tree_test() {
     cout << endl;
     cout << "Creating spanning tree... " << endl;
     Graph simple_tree;
-    simple_tree.print_graph();
     cout << endl;
-
 
     cout << "Adding nodes A, B, C, D, E and F... " << endl;
     cout << endl;
@@ -167,11 +128,15 @@ int simple_span_tree_test() {
     simple_tree.print_graph();
     cout << endl;
 
+    cout << "Number of vertices: " << simple_tree.get_num_vertex() << endl;
+    cout << "Number of edges: " << simple_tree.get_num_edge() << endl;
+    cout << endl;
+
+    cout << "(simple tree)" << endl;
+    simple_tree.min_span_tree();
+
     return 1;
-
 }
-
-
 
 int complex_span_tree_test() {
 
@@ -208,7 +173,7 @@ int complex_span_tree_test() {
     complex_tree.add_edge(8, complex_tree.find_vertex("2"), complex_tree.find_vertex("5"));
 
     complex_tree.add_edge(7, complex_tree.find_vertex("3"), complex_tree.find_vertex("4"));
-    complex_tree.add_edge(6, complex_tree.find_vertex("3"), complex_tree.find_vertex("6"));
+    complex_tree.add_edge(5, complex_tree.find_vertex("3"), complex_tree.find_vertex("6"));
 
     complex_tree.add_edge(8, complex_tree.find_vertex("4"), complex_tree.find_vertex("5"));
     complex_tree.add_edge(8, complex_tree.find_vertex("4"), complex_tree.find_vertex("6"));
@@ -229,66 +194,14 @@ int complex_span_tree_test() {
     complex_tree.print_graph();
     cout << endl;
 
+    cout << "Number of vertices: " << complex_tree.get_num_vertex() << endl;
+    cout << "Number of edges: " << complex_tree.get_num_edge() << endl;
+    cout << endl;
+
+    cout << "(complex tree)" << endl;
+    complex_tree.min_span_tree();
+    cout << endl;
 
     return 1;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // cout << "Create Simple Spanning Tree" << endl;
-    // cout << "-------------------------" << endl;
-    // cout << endl;
-    // cout << "Creating spanning tree... " << endl;
-    // Graph simple_tree;
-    // cout << endl;
-
-    // cout << "Adding nodes 1, 2, 3, 4, 5, 6, 7, 8 and 9... " << endl;
-    // cout << endl;
-    // // simple_tree.add_vertex("A");
-    // // simple_tree.add_vertex("B");
-    // // simple_tree.add_vertex("C");
-    // // simple_tree.add_vertex("D");
-    // // simple_tree.add_vertex("E");
-    // // simple_tree.add_vertex("F");
-
-    // simple_tree.add_vertex("1");
-    // simple_tree.add_vertex("2");
-    // simple_tree.add_vertex("3");
-    // simple_tree.add_vertex("4");
-    // simple_tree.add_vertex("5");
-    // simple_tree.add_vertex("6");
-    // simple_tree.add_vertex("7");
-    // simple_tree.add_vertex("8");
-    // simple_tree.add_vertex("9");    
-
-    // cout << "Printing Graph..." << endl;
-    // simple_tree.print_graph();
-    // cout << endl;
-
-    // cout << "Adding edges... " << endl;
-    // simple_tree.add_edge(10, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(4, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // simple_tree.add_edge(2, simple_tree.find_vertex(""), simple_tree.find_vertex(""));
-    // cout << endl;
-
-    // simple_tree.print_graph();
-    // cout << endl;
-
 

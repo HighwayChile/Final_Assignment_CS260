@@ -7,9 +7,9 @@ using namespace std;
 
 struct Edge;
 
+// struct with attributes
 struct Vertex { 
     string name; 
-    // Research vector more
     vector<Edge *> *neighbors;
 
     Vertex(string new_name);
